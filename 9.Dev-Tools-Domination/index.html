@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hello world');
+    
+    // Interpolated
+    console.log('Hello i am %s duc','huynh');
+
+    // Styled
+    console.log('%c hello iam styled ','color: red');
+    
+    // warning!
+    console.warn('OH NO');
+    
+    // Error :|
+    console.error('error');
+
+    // Info
+    console.info('the university of education Da Nang');
+    // Testing
+    let p = document.querySelector('p');
+
+    console.assert(p.classList.contains('make'),'that is wrong!');
+    // clearing
+    // console.clear();
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+    
+    // Grouping together
+    dogs.forEach(dog =>{
+      console.group(`${dog.name}`);
+      console.log(`this is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} year old`);
+      console.groupEnd(`${dog.name}`);
+    });
+    // counting
+    console.count('wes');
+    console.count('wes');
+    console.count('wes');
+    console.count('we');
+    console.count('we');
+    console.count('wes');
+    console.count('tink');
+    console.count('tink');
+    console.count('tink');
+    console.count('tink');
+
+    // timing
+    console.time('check time load');
+    fetch('https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json')
+    console.timeEnd('check time load');
+  </script>
+</body>
+</html>
